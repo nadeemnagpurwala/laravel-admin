@@ -16,7 +16,7 @@ class VariableController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -59,7 +59,7 @@ class VariableController extends Controller
         ]);
         $postData->save();
 
-        return redirect('/variable-configuration')->with('success', 'Variable saved successfully');
+        return redirect('/variable-configuration')->with('success', 'Variable created successfully');
     }
 
     /**

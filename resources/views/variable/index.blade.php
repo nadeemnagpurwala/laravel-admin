@@ -59,7 +59,6 @@
                                         <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                                     </form>               
                                 </div>
-                                <!-- <button class="btn btn-danger btn-sm" type="submit">Delete</button> -->
             				</td>
                         </tr>
                     	@endforeach

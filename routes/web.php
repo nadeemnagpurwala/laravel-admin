@@ -22,4 +22,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/variable-configuration', 'VariableController');
-Route::post('/variable-configuration/store', 'VariableController@store');
