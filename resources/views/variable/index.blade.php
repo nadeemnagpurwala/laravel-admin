@@ -53,11 +53,11 @@
             					<div class="row ml-auto">
                                     <a href="{{ route('variable-configuration.edit',$variable->id)}}" class="btn btn-info btn-sm">Edit</a>
                                     <span>&nbsp;</span>
-                                    <form action="{{ route('variable-configuration.destroy', $variable->id)}}" method="post">
+                                    <form action="{{ route('variable-configuration.destroy', $variable->id)}}" method="post" class="delete-form">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-                                    </form>               
+                                    </form>
                                 </div>
             				</td>
                         </tr>

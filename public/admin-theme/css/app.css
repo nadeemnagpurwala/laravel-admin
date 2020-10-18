@@ -5560,6 +5560,21 @@ a.close.disabled {
     max-width: 1140px;
   }
 }
+
+/* Custom Modal Changes */
+.modal {
+    overflow-y: auto;
+}
+
+.modal-open {
+    overflow: auto;
+}
+
+.modal-open[style] {
+    padding-right: 0px !important;
+}
+
+
 .tooltip {
   position: absolute;
   z-index: 1070;
