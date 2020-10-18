@@ -50,7 +50,7 @@
                             <td>{{$variable->variable_name}}</td>
                             <td>{{$variable->variable_code}}</td>
             				<td>
-            					<div class="row">
+            					<div class="row ml-auto">
                                     <a href="{{ route('variable-configuration.edit',$variable->id)}}" class="btn btn-info btn-sm">Edit</a>
                                     <span>&nbsp;</span>
                                     <form action="{{ route('variable-configuration.destroy', $variable->id)}}" method="post">
@@ -69,3 +69,14 @@
     </div>
 </div>
 @endsection
+
+@push('stylesheets')
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+@endpush
+
+@push('scripts')
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js" crossorigin="anonymous" defer></script>
+    <script src="{{ asset('admin-theme/js/list-page-js/list.js') }}" defer></script>
+@endpush

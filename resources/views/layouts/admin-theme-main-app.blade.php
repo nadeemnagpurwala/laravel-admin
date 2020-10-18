@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('includes.admin-theme-header')
+    @stack('stylesheets')
 </head>
 @guest
     <body class="bg-primary">
@@ -41,6 +42,7 @@
                 </div>
             </div>
         </div>
+        @stack('scripts')
 @endguest
     </body>
 </html>
