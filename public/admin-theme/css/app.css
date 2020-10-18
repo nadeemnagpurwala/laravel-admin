@@ -115,6 +115,11 @@ dl {
   margin-bottom: 1rem;*/
 }
 
+.custom-margin {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 ol ol,
 ul ul,
 ol ul,

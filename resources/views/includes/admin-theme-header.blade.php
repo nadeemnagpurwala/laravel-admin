@@ -21,6 +21,3 @@
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js" crossorigin="anonymous" defer></script>
 <script src="{{ asset('admin-theme/js/app.js') }}" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous" defer></script>
-<script src="{{ asset('admin-theme/js/chart-area-demo.js') }}" defer></script>
-<script src="{{ asset('admin-theme/js/chart-bar-demo.js') }}" defer></script>
