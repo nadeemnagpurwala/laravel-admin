@@ -39,7 +39,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="variable_code">Variable Code <span class="text-danger">*</span></label>
-                                <input type="text" id="variable_code" class="form-control" name="variable_code" value="{{$variable->variable_code}}" />
+                                <input type="text" id="variable_code" class="form-control" name="variable_code" value="{{$variable->variable_code}}" readonly />
                             </div>
                         </div>
                     </div>

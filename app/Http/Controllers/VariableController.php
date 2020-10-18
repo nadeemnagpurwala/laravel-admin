@@ -25,7 +25,8 @@ class VariableController extends Controller
     public function index()
     {
         $variables = Variable::all();
-        return view('variable.index', compact('variables'));
+        //return view('variable.index', compact('variables'));
+        return view('variable.index')->withVariables($variables);
     }
 
     /**
@@ -82,7 +83,11 @@ class VariableController extends Controller
     public function edit($id)
     {
         $variable = Variable::find($id);
-        return view('variable.edit', compact('variable'));
+        //return view('variable.edit', compact('variable'));
+        if ($variable) {
+            return view('variable.edit')->withVariable($variable);
+        }
+        abort(404);
     }
 
     /**
@@ -96,17 +101,20 @@ class VariableController extends Controller
     {
         $request->validate([
             'variable_name' => ['required', 'string', 'max:255'],
-            'variable_code' => ['required', 'string', 'max:255', 'unique:variables']
+            'variable_code' => ['required', 'string', 'max:255', 'unique:variables,variable_code,'.$id]
         ]);
 
         $variable = Variable::find($id);
-        $variable->variable_name =  $request->get('variable_name');
-        $variable->variable_code = $request->get('variable_code');
-        $variable->variable_plain_value = $request->get('variable_plain_value');
-        $variable->variable_html_value = $request->get('variable_html_value');
-        $variable->save();
+        if ($variable) {
+            $variable->variable_name =  $request->get('variable_name');
+            $variable->variable_code = $request->get('variable_code');
+            $variable->variable_plain_value = $request->get('variable_plain_value');
+            $variable->variable_html_value = $request->get('variable_html_value');
+            $variable->save();
 
-        return redirect('/variable-configuration')->with('success', 'Variable updated successfully');
+            return redirect('/variable-configuration')->with('success', 'Variable updated successfully');
+        }
+        abort(404);
     }
 
     /**
@@ -118,8 +126,10 @@ class VariableController extends Controller
     public function destroy($id)
     {
         $variable = Variable::find($id);
-        $variable->delete();
-        
-        return redirect('/variable-configuration')->with('success', 'Variable deleted successfully');
+        if ($variable) {
+            $variable->delete();
+            return redirect('/variable-configuration')->with('success', 'Variable deleted successfully');
+        }
+        abort(404);
     }
 }
