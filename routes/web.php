@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/variable-configuration', 'VariableController');
+
+Route::resource('/page-configuration', 'PageController');
